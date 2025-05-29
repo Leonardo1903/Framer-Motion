@@ -1,3 +1,4 @@
+import Blogs from "@/components/Blogs";
 import Container from "@/components/Container";
 import Projects from "@/components/Projects";
 
@@ -14,6 +15,7 @@ export default function Home() {
           at Google.
         </p>
         <Projects />
+        <Blogs />
       </Container>
     </div>
   );

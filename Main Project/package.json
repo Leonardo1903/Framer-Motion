@@ -16,6 +16,8 @@
     "clsx": "^2.1.1",
     "motion": "^12.12.2",
     "next": "15.3.2",
+    "next-mdx-remote": "^5.0.0",
+    "next-view-transitions": "^0.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwind-merge": "^3.3.0"

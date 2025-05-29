@@ -26,7 +26,7 @@ export default function Navbar() {
   ];
 
   return (
-    <Container >
+    <Container>
       <motion.nav
         animate={{
           boxShadow: scrolled ? "var(--shadow-acetenity)" : "none",
@@ -39,13 +39,15 @@ export default function Navbar() {
         }}
         className="fixed inset-x-0 top-0 mx-auto flex max-w-4xl items-center justify-between p-2 px-4"
       >
-        <Image
-          src="/avatar.jpeg"
-          alt="Avatar"
-          width={100}
-          height={100}
-          className="h-10 w-10 rounded-full"
-        />
+        <Link href="/">
+          <Image
+            src="/avatar.jpeg"
+            alt="Avatar"
+            width={100}
+            height={100}
+            className="h-10 w-10 rounded-full"
+          />
+        </Link>
 
         <div className="flex items-center">
           {navItems.map((item, idx) => (

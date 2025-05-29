@@ -1,0 +1,79 @@
+---
+title: "Tailwind CSS Basics"
+description: "Learn the fundamentals of Tailwind CSS, a utility-first CSS framework for rapidly building custom user interfaces."
+image: "/images/tailwindcss-basics.png"
+date: "2025-05-26"
+---
+
+# Tailwind CSS Basics
+
+Tailwind CSS is a utility-first CSS framework that enables developers to build modern, responsive user interfaces quickly and efficiently. Instead of writing custom CSS, you compose your designs using utility classes directly in your HTML or JSX.
+
+## Why Use Tailwind CSS?
+
+- **Utility-First:** Build complex designs by combining small, single-purpose utility classes.
+- **Rapid Prototyping:** Quickly create and iterate on UI components without leaving your markup.
+- **Responsive Design:** Easily add responsive breakpoints with intuitive class names.
+- **Customizable:** Configure your design system and extend Tailwind with plugins.
+- **No Unused CSS:** Purge unused styles for optimized production builds.
+
+## Getting Started
+
+1. **Install Tailwind CSS:**
+   ```bash
+   npm install -D tailwindcss postcss autoprefixer
+   npx tailwindcss init -p
+   ```
+
+2. **Configure Your Template Paths:**
+   Edit your `tailwind.config.js`:
+   ```js
+   module.exports = {
+     content: [
+       "./pages/**/*.{js,ts,jsx,tsx}",
+       "./components/**/*.{js,ts,jsx,tsx}",
+     ],
+     theme: {
+       extend: {},
+     },
+     plugins: [],
+   }
+   ```
+
+3. **Add Tailwind to Your CSS:**
+   In your main CSS file (e.g., `globals.css`):
+   ```css
+   @tailwind base;
+   @tailwind components;
+   @tailwind utilities;
+   ```
+
+## Example: Creating a Button
+
+Here's how you can create a styled button using Tailwind CSS utility classes:
+
+```jsx
+<button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+  Click Me
+</button>
+```
+
+## Responsive Design
+
+Tailwind makes it easy to build responsive layouts. For example:
+
+```jsx
+<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+  <div className="bg-gray-100 p-4">Column 1</div>
+  <div className="bg-gray-100 p-4">Column 2</div>
+  <div className="bg-gray-100 p-4">Column 3</div>
+</div>
+```
+
+## Customization
+
+You can customize your design system by editing the `theme` section in `tailwind.config.js`. Add custom colors, fonts, or extend existing utilities as needed.
+
+## Conclusion
+
+Tailwind CSS empowers developers to build beautiful, responsive interfaces with speed and consistency. Its utility-first approach and powerful customization options make it a great choice for modern web
