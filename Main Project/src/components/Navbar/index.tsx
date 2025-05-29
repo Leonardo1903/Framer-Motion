@@ -2,13 +2,22 @@
 import Container from "../Container";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useMotionValueEvent, useScroll } from "motion/react";
+import {
+  motion,
+  useMotionTemplate,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "motion/react";
 import { useState } from "react";
 
 export default function Navbar() {
   const [hovered, setHovered] = useState<number | null>(null);
   const [scrolled, setScrolled] = useState<boolean>(false);
   const { scrollY } = useScroll();
+
+  const y = useTransform(scrollY, [0, 100], [0, -10]);
+  const width = useTransform(scrollY, [0, 100], ["50%", "40%"]);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > 20) {
@@ -28,10 +37,10 @@ export default function Navbar() {
   return (
     <Container>
       <motion.nav
-        animate={{
+        style={{
           boxShadow: scrolled ? "var(--shadow-acetenity)" : "none",
-          width: scrolled ? "50%" : "100%",
-          y: scrolled ? 10 : 0,
+          width,
+          y,
         }}
         transition={{
           duration: 0.3,
